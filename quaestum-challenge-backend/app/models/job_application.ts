@@ -1,7 +1,8 @@
 import { DateTime } from 'luxon'
 import type { HasOne } from '@adonisjs/lucid/types/relations'
-import { BaseModel, column, hasOne } from '@adonisjs/lucid/orm'
+import { BaseModel, column, beforeSave, afterFetch, hasOne } from '@adonisjs/lucid/orm';
 import User from '#models/user'
+import Education from '../dto/data_received.dto.js';
 
 export default class JobApplication extends BaseModel {
   @column({ isPrimary: true })
@@ -32,11 +33,7 @@ export default class JobApplication extends BaseModel {
   declare zipCode: string
 
   @column()
-  declare educations: {
-    courseName: string
-    institutionName: string
-    graduationDate: string
-  }[] | string
+  declare educations: Education[] | string
 
   @column()
   declare skills: string[] | string
