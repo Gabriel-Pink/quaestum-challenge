@@ -35,7 +35,7 @@ export interface jobApplicationData {
 export class AuthService {
     static async signUp(data: SignUpData) {
         try {
-            const response = await api.post("/signup", data);
+            const response = await api.post("/users/signup", data);
             return response.data;
         } catch (error) {
             throw error;
@@ -44,7 +44,7 @@ export class AuthService {
 
     static async signIn(data: SignInData) {
         try {
-            const response = await api.post("/signin", data);
+            const response = await api.post("/users/signin", data);
             return response.data;
         } catch (error) {
             throw error;
@@ -62,7 +62,7 @@ export class AuthService {
 
     static async resetPassword(data: ResetPasswordData) {
         try {
-            const response = await api.put(`/reset-password/${data.id}`, {
+            const response = await api.put(`/users/reset-password/${data.id}`, {
                 newPassword: data.newPassword,
             });
             return response.data;

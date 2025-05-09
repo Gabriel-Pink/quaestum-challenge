@@ -60,7 +60,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       setUser(decoded);
   
       Cookies.set('token', token.token, {
-        expires: 7, // dias
+        expires: 7,
         sameSite: 'strict',
         secure: true,
       });

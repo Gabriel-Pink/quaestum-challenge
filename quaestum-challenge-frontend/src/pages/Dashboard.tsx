@@ -64,12 +64,12 @@ export function Dashboard() {
   };
 
   const handleAccept = (id: number) => {
-    api.put(`/job-applications/${id}/approve`);
+    api.put(`/applications/job-applications/${id}/approve`);
     updateStatus(id, "aprovado");
   };
 
   const handleReject = (id: number) => {
-    api.put(`/job-applications/${id}/decline`);
+    api.put(`/applications/job-applications/${id}/decline`);
     updateStatus(id, "reprovado");
   };
 

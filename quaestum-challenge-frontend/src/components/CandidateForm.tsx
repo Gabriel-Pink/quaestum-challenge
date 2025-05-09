@@ -79,7 +79,6 @@ export function CandidateForm() {
       setError(error.message);
     }
 
-    console.log('Formulário enviado:', data);
   }
 
   return (
